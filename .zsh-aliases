@@ -1,0 +1,31 @@
+
+# dhaley's stuff
+
+alias grep="grep --color"
+alias pgrep="pgrep -l"
+alias afslogin="klog dhaley"
+alias cs="checkstatus"
+alias cvsdiff="cvs diff --brief"
+
+alias cd="pushd"
+
+alias lsd="ls -d */"
+
+alias ls="ls -F --color"
+
+alias pod="perldoc"
+
+alias duh="du -h --max-depth=1"
+alias duhere="du -h --max-depth=1"
+
+alias tb="thunderbird"
+
+alias vi="vim"
+
+alias makectags="ctags --c++-kinds=+cdefgmnpstuv --fields=+iaS --extra=+q *.c(N) *.cpp(N) *.h(N) *.hpp(N)"
+
+#alias mac="bindkey -s  "
+
+#alias remake="make clean && make"
+#alias youtube="youtube-dl -t"
+
