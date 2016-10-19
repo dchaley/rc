@@ -58,6 +58,13 @@ else
     PROMPT='[%n@%m:[%T]:$(abbreviate_paths "%~")\$ '
 fi
 
+if [ "$OSTYPE" = "darwin15.0" ] ; then
+    bindkey '\e[1;5D' backward-word
+    bindkey '\e[1;5C' forward-word
+    bindkey '\e[H' beginning-of-line
+    bindkey '\e[F' end-of-line
+fi
+
 RPS1='%{$C_PURPLE%}[%T]%{$C_RESET%}'
 DEFAULT_RPS1='%{$C_PURPLE%}[%T]%{$C_RESET%}'
 
