@@ -322,7 +322,7 @@ endif
 "    colorscheme mydefault
 "endif 
 
-if (&term == 'xterm' || &term == 'xterm-color' || &term == 'xtermc' || &term == 'rxvt')
+if (&term == 'xterm' || &term == 'xterm-color' || &term == 'xterm-256color' || &term == 'xtermc' || &term == 'rxvt')
     "set term=xtermc
     colorscheme delek
 
@@ -342,7 +342,7 @@ if (&term == 'xterm' || &term == 'xterm-color' || &term == 'xtermc' || &term == 
         colorscheme david-colors
     endif
 
-    if (&term == 'xtermc' || $COLORTERM == 'xterm-color')
+    if (&term == 'xtermc' || $COLORTERM == 'xterm-color' || &term == 'xterm-256color')
         "set t_Co=256
         "set t_AB=[%?%p1%{8}%<%t%p1%{40}%+%e%p1%{92}%+%;%dm
         "set t_AF=[%?%p1%{8}%<%t%p1%{30}%+%e%p1%{82}%+%;%dm
