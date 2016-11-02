@@ -63,6 +63,7 @@ if [ "$OSTYPE" = "darwin15.0" ] ; then
     bindkey '\e[1;5C' forward-word
     bindkey '\e[H' beginning-of-line
     bindkey '\e[F' end-of-line
+    bindkey '\e[3~' delete-char
 fi
 
 RPS1='%{$C_PURPLE%}[%T]%{$C_RESET%}'
