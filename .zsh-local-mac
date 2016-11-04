@@ -1,0 +1,7 @@
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+
+alias s3='aws s3'
