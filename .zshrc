@@ -58,7 +58,7 @@ else
     PROMPT='[%n@%m:[%T]:$(abbreviate_paths "%~")\$ '
 fi
 
-if [ "$OSTYPE" = "darwin15.0" ] ; then
+if [ "$OSTYPE" = "darwin16.0" ] ; then
     bindkey '\e[1;5D' backward-word
     bindkey '\e[1;5C' forward-word
     bindkey '\e[H' beginning-of-line
@@ -130,6 +130,10 @@ fi
 
 if [ -e ~/.zsh-local ] ; then
     source ~/.zsh-local
+fi
+
+if [ -e ~/.zsh-local-mac ] ; then
+    source ~/.zsh-local-mac
 fi
 
 if [ -e ~/.zsh-prompt ] ; then
