@@ -1,0 +1,9 @@
+<application>
+  <component name="FindRecents">
+    <findStrings>
+      <find>ec2role</find>
+      <find>json</find>
+      <find>sparkjobpolling</find>
+    </findStrings>
+  </component>
+</application>

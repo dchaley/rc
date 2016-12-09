@@ -61,15 +61,6 @@
         <option value="sql.names" />
         <option value="sql.column.name" />
         <option value="sql.table.shortName" />
-        <option value="angularjs.delimiter.index" />
-        <option value="angularjs.ui.router.generic.states.index" />
-        <option value="angularjs.ui.router.states.index" />
-        <option value="angularjs.symbol.index" />
-        <option value="angularjs.filter.index" />
-        <option value="angularjs.module.index" />
-        <option value="angularjs.controller.index" />
-        <option value="angularjs.directives.doc.index" />
-        <option value="angularjs.directives.index" />
         <option value="amd.requirePaths.index" />
         <option value="amd.baseUrl.index" />
         <option value="js.symbol.qualified.names.index" />

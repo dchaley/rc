@@ -1,0 +1,55 @@
+<application>
+  <component name="PropertiesComponent">
+    <property name="evlsprt3.162" value="14" />
+    <property name="installed.kotlin.plugin.version" value="1.0.4-release-IJ2016.1-112" />
+    <property name="file.chooser.recent.files" value="$USER_HOME$/development/cluster-quartermaster&#10;/Users/davidhaley/development/radius-api&#10;/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home&#10;/Users/davidhaley/development/delphi" />
+    <property name="last.imported.location" value="$USER_HOME$/development/delphi" />
+    <property name="create.project.preferred.importer" value="Existing Sources" />
+    <property name="toolwindow.stripes.buttons.info.shown" value="true" />
+    <property name="DeploymentNotificationsComponent.WarnDisplayed.Java7&amp;Windows7FTPIssue" value="false" />
+    <property name="lastTip" value="11" />
+    <property name="ideavim.statistics.timestamp" value="1481229380652" />
+    <property name="decompiler.legal.notice.accepted" value="true" />
+    <property name="ProjectStructure.SecondLevelElements" value="0.3218391" />
+    <property name="KEYMAP" value="scroll&#10;top&#10;method&#10;up&#10;indent" />
+    <property name="TestNGSupport.hidePassedTests" value="true" />
+    <property name="TestNGSupport.hideConfig" value="true" />
+    <property name="INSPECTION_FILTER_HISTORY" value="null" />
+    <property name="FileTemplates.SelectedTemplate" value="HTML File" />
+    <property name="selected.color.option.type" value="IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES" />
+    <property name="ColorChooser.RecentColors" value="233-233-233-255,,,33-40-115-255,,,15-20-55-255,,,29-37-102-255,,,128-0-32-255,,,143-0-36-255,,,62-162-54-255,,,10-184-15-255,,,238-238-83-255,,,94-116-198-255,,,31-30-198-255,,,5-168-149-255,,,31-40-113-255,,,75-146-162-255,,,126-35-204-255,,,67-61-204-255,,,255-188-80-255,,,102-182-206-255,,,35-168-101-255,,,183-192-198-255" />
+    <property name="settings.code.style.selected.tab.JAVA" value="Wrapping and Braces" />
+    <property name="project.wizard.group" value="JAVA_MODULE" />
+    <property name="project.wizard.template" value="Java" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="SqlStructureView.filterD.file.structure.state" value="true" />
+    <property name="BEFORE.DISTRACTION.MODE.SHOW_STATUS_BAR" value="true" />
+    <property name="BEFORE.DISTRACTION.MODE.SHOW_MAIN_TOOLBAR" value="false" />
+    <property name="BEFORE.DISTRACTION.MODE.SHOW_NAVIGATION_BAR" value="true" />
+    <property name="BEFORE.DISTRACTION.MODE.IS_FOLDING_OUTLINE_SHOWN" value="true" />
+    <property name="BEFORE.DISTRACTION.MODE.IS_WHITESPACES_SHOWN" value="false" />
+    <property name="BEFORE.DISTRACTION.MODE.ARE_LINE_NUMBERS_SHOWN" value="true" />
+    <property name="BEFORE.DISTRACTION.MODE.ARE_GUTTER_ICONS_SHOWN" value="true" />
+    <property name="BEFORE.DISTRACTION.MODE.IS_RIGHT_MARGIN_SHOWN" value="true" />
+    <property name="BEFORE.DISTRACTION.MODE.IS_INDENT_GUIDES_SHOWN" value="true" />
+    <property name="BEFORE.DISTRACTION.MODE.SHOW_BREADCRUMBS" value="true" />
+    <property name="BEFORE.DISTRACTION.MODE.SHOW_METHOD_SEPARATORS" value="true" />
+    <property name="BEFORE.DISTRACTION.MODE.HIDE_TOOL_STRIPES" value="false" />
+    <property name="BEFORE.DISTRACTION.MODE.EDITOR_TAB_PLACEMENT" value="1" />
+    <property name="AFTER.DISTRACTION.MODE.SHOW_STATUS_BAR" value="false" />
+    <property name="AFTER.DISTRACTION.MODE.SHOW_MAIN_TOOLBAR" value="false" />
+    <property name="AFTER.DISTRACTION.MODE.SHOW_NAVIGATION_BAR" value="false" />
+    <property name="AFTER.DISTRACTION.MODE.IS_FOLDING_OUTLINE_SHOWN" value="false" />
+    <property name="AFTER.DISTRACTION.MODE.IS_WHITESPACES_SHOWN" value="false" />
+    <property name="AFTER.DISTRACTION.MODE.ARE_LINE_NUMBERS_SHOWN" value="false" />
+    <property name="AFTER.DISTRACTION.MODE.ARE_GUTTER_ICONS_SHOWN" value="false" />
+    <property name="AFTER.DISTRACTION.MODE.IS_RIGHT_MARGIN_SHOWN" value="false" />
+    <property name="AFTER.DISTRACTION.MODE.IS_INDENT_GUIDES_SHOWN" value="false" />
+    <property name="AFTER.DISTRACTION.MODE.SHOW_BREADCRUMBS" value="false" />
+    <property name="AFTER.DISTRACTION.MODE.SHOW_METHOD_SEPARATORS" value="false" />
+    <property name="AFTER.DISTRACTION.MODE.HIDE_TOOL_STRIPES" value="true" />
+    <property name="AFTER.DISTRACTION.MODE.EDITOR_TAB_PLACEMENT" value="0" />
+    <property name="Copy.OpenInEditor" value="true" />
+  </component>
+</application>
