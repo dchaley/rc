@@ -35,25 +35,31 @@
     <location key="#com.intellij.ide.util.MemberChooser.0.0.1440.900" x="533" y="153" />
     <location key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog.0.0.1440.900" x="458" y="212" />
     <location key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes.0.0.2560.1440" x="1004" y="594" />
+    <location key="replaceTextDialog.0.0.2560.1440" x="1042" y="441" />
+    <location key="#Editor_|_Colors_&amp;_Fonts_|_General.0.0.2560.1440" x="988" y="202" />
     <size key="ProcessPopupWindow.0.0.1440.900" width="525" height="280" />
     <size key="SettingsEditor.0.0.2560.1440" width="1192" height="688" />
-    <size key="GridCell.Tab.0.left.0.0.2560.1440" width="2518" height="411" />
-    <size key="GridCell.Tab.0.center.0.0.2560.1440" width="2518" height="411" />
-    <size key="GridCell.Tab.0.right.0.0.2560.1440" width="2518" height="411" />
-    <size key="GridCell.Tab.0.bottom.0.0.2560.1440" width="2518" height="411" />
-    <size key="GridCell.Tab.0.left.0.0.1440.900" width="1440" height="201" />
-    <size key="GridCell.Tab.0.center.0.0.1440.900" width="1440" height="201" />
-    <size key="GridCell.Tab.0.right.0.0.1440.900" width="1440" height="201" />
-    <size key="GridCell.Tab.0.bottom.0.0.1440.900" width="1440" height="201" />
+    <size key="GridCell.Tab.0.left.0.0.2560.1440" width="1398" height="422" />
+    <size key="GridCell.Tab.0.center.0.0.2560.1440" width="1398" height="422" />
+    <size key="GridCell.Tab.0.right.0.0.2560.1440" width="1398" height="422" />
+    <size key="GridCell.Tab.0.bottom.0.0.2560.1440" width="1398" height="422" />
+    <size key="GridCell.Tab.0.left.0.0.1440.900" width="1398" height="422" />
+    <size key="GridCell.Tab.0.center.0.0.1440.900" width="1398" height="422" />
+    <size key="GridCell.Tab.0.right.0.0.1440.900" width="1398" height="422" />
+    <size key="GridCell.Tab.0.bottom.0.0.1440.900" width="1398" height="422" />
     <size key="#Inspections.0.0.2560.1440" width="879" height="674" />
-    <size key="GridCell.Tab.1.left.0.0.2560.1440" width="2560" height="513" />
-    <size key="GridCell.Tab.1.center.0.0.2560.1440" width="2560" height="513" />
-    <size key="GridCell.Tab.1.right.0.0.2560.1440" width="2560" height="513" />
-    <size key="GridCell.Tab.1.bottom.0.0.2560.1440" width="2560" height="513" />
+    <size key="GridCell.Tab.1.left.0.0.2560.1440" width="1398" height="288" />
+    <size key="GridCell.Tab.1.center.0.0.2560.1440" width="1398" height="288" />
+    <size key="GridCell.Tab.1.right.0.0.2560.1440" width="1398" height="288" />
+    <size key="GridCell.Tab.1.bottom.0.0.2560.1440" width="1398" height="288" />
     <size key="ProcessPopupWindow.0.0.2560.1440" width="577" height="110" />
     <size key="findTextDialog.0.0.1440.900" width="748" height="546" />
     <size key="javadoc.popup.0.0.1440.900" width="481" height="175" />
     <size key="javadoc.popup.0.0.2560.1440" width="481" height="175" />
     <size key="findTextDialog.0.0.2560.1440" width="948" height="643" />
+    <size key="GridCell.Tab.1.left.0.0.1440.900" width="1398" height="288" />
+    <size key="GridCell.Tab.1.center.0.0.1440.900" width="1398" height="288" />
+    <size key="GridCell.Tab.1.right.0.0.1440.900" width="1398" height="288" />
+    <size key="GridCell.Tab.1.bottom.0.0.1440.900" width="1398" height="288" />
   </component>
 </application>
