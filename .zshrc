@@ -204,5 +204,6 @@ function abbreviate_paths()
     echo $abbrev
 }
 
+export PATH=$PATH:~/bin
 
 
