@@ -394,3 +394,20 @@ endif
 
 :autocmd CursorMoved * silent! exe printf('match IncSearch /\<%s\>/', expand('<cword>'))
 
+function! SyntaxItem()
+    return synIDattr(synID(line("."),col("."),1),"name")
+endfunction
+
+if has('statusline')
+    set statusline=\ 
+    set statusline+=%f\ 
+    set statusline+=%=
+    " buf/cursor info
+    set statusline+=%45(%{VimBuddy()}\ buf\ %3(#%n%)\ line\ %9(%l/%L%),:%c%V%)\ 
+    " highlight group for thing under cursor
+    set statusline+=%25(%{SyntaxItem()}%)\ 
+    " current file type
+    set statusline+=%y\ 
+endif
+"set statusline=%{SyntaxItem()}
+
