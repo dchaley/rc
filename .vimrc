@@ -392,3 +392,5 @@ if filereadable(".vimrc-custom")
     source .vimrc-custom
 endif
 
+:autocmd CursorMoved * silent! exe printf('match IncSearch /\<%s\>/', expand('<cword>'))
+
