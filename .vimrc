@@ -195,6 +195,7 @@ endfunction
 " end of stuff stolen from piotrek
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" View navigation
 
 map <leader>1 :tabn1<CR>
 map <leader>2 :tabn2<CR>
@@ -216,6 +217,13 @@ map <leader>& :tabn17<CR>
 map <leader>* :tabn18<CR>
 map <leader>( :tabn19<CR>
 map <leader>) :tabn20<CR>
+
+nmap <C-S-Left> <C-W><Left>
+nmap <C-S-Up> <C-W><Up>
+nmap <C-S-Right> <C-W><Right>
+nmap <C-S-Down> <C-W><Down>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 map <leader>l :set invnumber<CR>
 map <leader>d :VCSVimDiff<CR>
@@ -251,6 +259,7 @@ set showtabline=2
 map <A-PageUp> :bprev<CR>
 map <A-PageDown> :bnext<CR>
 
+" Smart word boundary left/right
 nmap <S-Left> ,b
 nmap <S-Right> ,w
 imap <S-Left> <C-O>,b
@@ -258,7 +267,9 @@ imap <S-Right> <C-O>,w
 
 " tag/item bindings
 map <A-Left> :cp<CR>
+map <leader><pageup> :cp<CR>
 map <A-Right> :cn<CR>
+map <leader><pagedown> :cn<CR>
 map <A-S-Left> :tp<CR>
 map <A-S-Right> :tn<CR>
 
@@ -285,16 +296,60 @@ map <A-8> :match ErrorMsg '\%>80v.\+'<cr>
 
 nmap . .`[
 
-"set foldtext=MyFoldText()
-" {{{ fold function
-function! MyFoldText()
-  let line = getline(v:foldstart)
-  let sub = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g')
-  return v:folddashes . sub
-endfunction
-set foldmethod=marker
-"}}} end fold function
-" }}} end fold function
+if has("folding")
+  "set foldtext=MyFoldText()
+  " {{{ fold function
+  function! MyFoldText()
+    let line = getline(v:foldstart)
+    let sub = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g')
+    return v:folddashes . sub
+  endfunction
+  set foldmethod=marker
+  " }}} end fold function
+  
+  set foldenable
+  set foldlevelstart=99
+  set foldmethod=syntax
+
+  nnoremap <Space> za
+  vnoremap <Space> za
+
+  function! FoldText()
+    let l:lpadding = &fdc
+    redir => l:signs
+      execute 'silent sign place buffer='.bufnr('%')
+    redir End
+    let l:lpadding += l:signs =~ 'id=' ? 2 : 0
+
+    if exists("+relativenumber")
+      if (&number)
+        let l:lpadding += max([&numberwidth, strlen(line('$'))]) + 1
+      elseif (&relativenumber)
+        let l:lpadding += max([&numberwidth, strlen(v:foldstart - line('w0')), strlen(line('w$') - v:foldstart), strlen(v:foldstart)]) + 1
+      endif
+    else
+      if (&number)
+        let l:lpadding += max([&numberwidth, strlen(line('$'))]) + 1
+      endif
+    endif
+
+    " expand tabs
+    let l:start = substitute(getline(v:foldstart), '\t', repeat(' ', &tabstop), 'g')
+    let l:end = substitute(substitute(getline(v:foldend), '\t', repeat(' ', &tabstop), 'g'), '^\s*', '', 'g')
+
+    let l:info = ' (' . (v:foldend - v:foldstart) . ')'
+    let l:infolen = strlen(substitute(l:info, '.', 'x', 'g'))
+    let l:width = winwidth(0) - l:lpadding - l:infolen
+
+    let l:separator = ' … '
+    let l:separatorlen = strlen(substitute(l:separator, '.', 'x', 'g'))
+    let l:start = strpart(l:start , 0, l:width - strlen(substitute(l:end, '.', 'x', 'g')) - l:separatorlen)
+    let l:text = l:start . ' … ' . l:end
+
+    return l:text . repeat(' ', l:width - strlen(substitute(l:text, ".", "x", "g"))) . l:info
+  endfunction
+  set foldtext=FoldText()
+endif
 
 " backspace and cursor keys wrap to previous/next line
 set backspace=indent,eol,start whichwrap+=<,>,[,]
@@ -365,7 +420,6 @@ endif
 
 " If there is a local vimrc file, load it
 let localvimrc = $HOME . "/.vimrc-local"
-
 if (filereadable(localvimrc))
     execute "source " . localvimrc
 endif
@@ -373,7 +427,10 @@ endif
 set exrc
 set secure
 
+" Initialize pathogen package management system
 execute pathogen#infect()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if executable('ag')
   " Use Ag over Grep
@@ -381,6 +438,29 @@ if executable('ag')
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+
+  let g:ackprg = 'ag --vimgrep'
+  "set shellpipe=>
+
+  function Search(string) abort
+    let saved_shellpipe = &shellpipe
+    let &shellpipe = '>'
+    try
+      execute 'Ack!' shellescape(a:string, 1)
+    finally
+      let &shellpipe = saved_shellpipe
+    endtry
+  endfunction
+
+  nnoremap <Leader>f :call Search("")<left><left>
+  nnoremap <Leader>F :call Search(expand('<cword>'))<cr>
+  
+  nnoremap <Leader>p :Buffers<cr>
+else
+  cnoreabbrev Ack Ack!
+  nnoremap <Leader>f :Ack!<Space>
 endif
 
 
@@ -392,7 +472,33 @@ if filereadable(".vimrc-custom")
     source .vimrc-custom
 endif
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fzf.vim
+
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+nmap <c-p> :Files<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Highlight text matching word under cursor
 :autocmd CursorMoved * silent! exe printf('match IncSearch /\<%s\>/', expand('<cword>'))
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Status bar
 
 function! SyntaxItem()
     return synIDattr(synID(line("."),col("."),1),"name")
@@ -410,4 +516,74 @@ if has('statusline')
     set statusline+=%y\ 
 endif
 "set statusline=%{SyntaxItem()}
+
+let g:indentLine_char='⦙'
+nmap <leader>i :IndentLinesToggle<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if v:version >= 703 && !has('nvim')
+  " Note: Relative number is quite slow with Ruby, so is cursorline
+  autocmd FileType ruby setlocal ts=2 sts=2 sw=2 norelativenumber nocursorline
+else
+  autocmd FileType ruby setlocal ts=2 sts=2 sw=2
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Open nerdtree if no file was opened
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+nnoremap <Leader>o :NERDTreeToggle<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" http://vim.wikia.com/wiki/Move_to_next/previous_line_with_same_indentation
+"
+" Jump to the next or previous line that has the same level or a lower
+" level of indentation than the current line.
+"
+" exclusive (bool): true: Motion is exclusive
+" false: Motion is inclusive
+" fwd (bool): true: Go to next line
+" false: Go to previous line
+" lowerlevel (bool): true: Go to line with lower indentation level
+" false: Go to line with the same indentation level
+" skipblanks (bool): true: Skip blank lines
+" false: Don't skip blank lines
+function! NextIndent(exclusive, fwd, lowerlevel, skipblanks)
+  let line = line('.')
+  let column = col('.')
+  let lastline = line('$')
+  let indent = indent(line)
+  let stepvalue = a:fwd ? 1 : -1
+  while (line > 0 && line <= lastline)
+    let line = line + stepvalue
+    if ( ! a:lowerlevel && indent(line) == indent ||
+          \ a:lowerlevel && indent(line) < indent)
+      if (! a:skipblanks || strlen(getline(line)) > 0)
+        if (a:exclusive)
+          let line = line - stepvalue
+        endif
+        exe line
+        exe "normal " column . "|"
+        return
+      endif
+    endif
+  endwhile
+endfunction
+
+" Moving back and forth between lines of same or lower indentation.
+nnoremap <silent> [l :call NextIndent(0, 0, 0, 1)<CR>
+nnoremap <silent> ]l :call NextIndent(0, 1, 0, 1)<CR>
+nnoremap <silent> [L :call NextIndent(0, 0, 1, 1)<CR>
+nnoremap <silent> ]L :call NextIndent(0, 1, 1, 1)<CR>
+vnoremap <silent> [l <Esc>:call NextIndent(0, 0, 0, 1)<CR>m'gv''
+vnoremap <silent> ]l <Esc>:call NextIndent(0, 1, 0, 1)<CR>m'gv''
+vnoremap <silent> [L <Esc>:call NextIndent(0, 0, 1, 1)<CR>m'gv''
+vnoremap <silent> ]L <Esc>:call NextIndent(0, 1, 1, 1)<CR>m'gv''
+onoremap <silent> [l :call NextIndent(0, 0, 0, 1)<CR>
+onoremap <silent> ]l :call NextIndent(0, 1, 0, 1)<CR>
+onoremap <silent> [L :call NextIndent(1, 0, 1, 1)<CR>
+onoremap <silent> ]L :call NextIndent(1, 1, 1, 1)<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
