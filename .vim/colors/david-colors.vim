@@ -100,6 +100,8 @@ if &t_Co == 256
 
   hi Type ctermfg=23
 
+  hi Folded     ctermbg=17	   ctermfg=7 guibg=LightGrey guifg=DarkBlue
+
 else
 
   hi Statement  cterm=bold ctermfg=Blue	     gui=bold guifg=#005fff
