@@ -70,7 +70,12 @@ set ruler
 set rulerformat=%45(%{VimBuddy()}\ buf\ %3(#%n%),\ line\ %9(%l/%L%),\ col\ %c%V\ \ %y%)
 " highlight matching parentheses, brackets, etc.
 set showmatch
-set viminfo='200,%
+
+if has('nvim')
+  set viminfo='200
+else
+  set shada='200,/30,h,s10
+endif
 
 " turn on syntax highlighting
 syntax enable
