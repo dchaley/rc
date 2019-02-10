@@ -228,6 +228,8 @@ nmap <C-S-Up> <C-W><Up>
 nmap <C-S-Right> <C-W><Right>
 nmap <C-S-Down> <C-W><Down>
 
+nnoremap <leader>q :bp\|bd #<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 map <leader>l :set invnumber<CR>
@@ -591,4 +593,6 @@ onoremap <silent> ]l :call NextIndent(0, 1, 0, 1)<CR>
 onoremap <silent> [L :call NextIndent(1, 0, 1, 1)<CR>
 onoremap <silent> ]L :call NextIndent(1, 1, 1, 1)<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:vim_json_syntax_conceal = 0
 
