@@ -66,8 +66,10 @@ if [ "$OSTYPE" = "darwin16.0" ] ; then
     bindkey '\e[3~' delete-char
 fi
 
-RPS1='%{$C_PURPLE%}[%T]%{$C_RESET%}'
-DEFAULT_RPS1='%{$C_PURPLE%}[%T]%{$C_RESET%}'
+# right-side prompt
+CMDTIME=""
+DEFAULT_RPS1='${CMDTIME}%{$C_PURPLE%}[%T]%{$C_RESET%}'
+RPS1=$DEFAULT_RPS1
 
 setopt prompt_subst
 
@@ -99,11 +101,17 @@ function precmd() {
   PROMPT_PWD="${(%):-%~}"
   PROMPT_PWD="$(abbreviate_paths $PROMPT_PWD)";
 
+  if [ $timer ]; then
+    timer_show=$(($SECONDS - $timer))
+    CMDTIME="%{$C_CYAN%}${timer_show}s %{$C_RESET%}"
+    unset timer
+  fi
 }
 
 # preexec is called just before any command line is executed
 function preexec() {
   title "$1" "%m(%35<...<%~)"
+  timer=${timer:-$SECONDS}
 }
 
 # Comment in the above and uncomment this below for a color prompt
