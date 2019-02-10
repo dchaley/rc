@@ -24,8 +24,28 @@ alias vi="vim"
 
 alias makectags="ctags --c++-kinds=+cdefgmnpstuv --fields=+iaS --extra=+q *.c(N) *.cpp(N) *.h(N) *.hpp(N)"
 
+ccd() { 
+  old_fzf_default_command=$FZF_DEFAULT_COMMAND
+
+  # use git ls-tree when available, it honors .gitignore & is very fast
+  export FZF_DEFAULT_COMMAND='
+  (git ls-tree -r --name-only HEAD | sed "s/[^/]*$//" | sort | uniq ||
+   find . -path "*/\.*" -prune -o -type d -print -o -type l -print |
+      sed s/^..//) 2> /dev/null'
+
+  # using git ls-tree folders as input, launch fzf with the args as starting query
+  #dir=`fzf -q "$*" | sed 's/[^/]*$//'`
+  dir=`fzf -q "$*"`
+
+  # if we got a dir back, cd to it
+  [[ -n "$dir" ]] && cd $dir
+
+  export FZF_DEFAULT_COMMAND=$old_fzf_default_command
+}
+
 #alias mac="bindkey -s  "
 
 #alias remake="make clean && make"
-#alias youtube="youtube-dl -t"
+
+alias gotest="go test -short -p 1 -parallel 4 -timeout 300s -race"
 
