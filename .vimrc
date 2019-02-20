@@ -596,3 +596,5 @@ onoremap <silent> ]L :call NextIndent(1, 1, 1, 1)<CR>
 
 let g:vim_json_syntax_conceal = 0
 
+" If installed using Homebrew
+set rtp+=/usr/local/opt/fzf
