@@ -132,16 +132,16 @@ if [ -f ~/.zsh-env ]; then
     . ~/.zsh-env
 fi
 
-if [ -e ~/.zsh-aliases ] ; then
-    source ~/.zsh-aliases
-fi
-
 if [ -e ~/.zsh-local ] ; then
     source ~/.zsh-local
 fi
 
 if [ -e ~/.zsh-local-mac ] ; then
     source ~/.zsh-local-mac
+fi
+
+if [ -e ~/.zsh-aliases ] ; then
+    source ~/.zsh-aliases
 fi
 
 if [ -e ~/.zsh-prompt ] ; then
