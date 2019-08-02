@@ -8,9 +8,9 @@ alias cs="checkstatus"
 alias cvsdiff="cvs diff --brief"
 
 alias cd="pushd"
+alias gcam="git commit --amend"
 
 alias lsd="ls -d */"
-
 alias ls="ls -F --color"
 
 alias pod="perldoc"
@@ -48,4 +48,6 @@ ccd() {
 #alias remake="make clean && make"
 
 alias gotest="go test -short -p 1 -parallel 4 -timeout 300s -race"
+
+alias highlight='ack --passthru "$@"'
 
