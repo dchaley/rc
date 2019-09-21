@@ -214,4 +214,4 @@ function abbreviate_paths()
 
 export PATH=$PATH:~/bin
 
-
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
