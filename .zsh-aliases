@@ -24,6 +24,8 @@ alias vi="vim"
 
 alias makectags="ctags --c++-kinds=+cdefgmnpstuv --fields=+iaS --extra=+q *.c(N) *.cpp(N) *.h(N) *.hpp(N)"
 
+alias please="sudo"
+
 ccd() { 
   old_fzf_default_command=$FZF_DEFAULT_COMMAND
 
@@ -50,4 +52,11 @@ ccd() {
 alias gotest="go test -short -p 1 -parallel 4 -timeout 300s -race"
 
 alias highlight='ack --passthru "$@"'
+
+# ruby/rails dev aliases
+alias be="bundle exec"
+
+# git aliases
+alias gcam='git commit --amend'
+alias git-tidy='git branch -d $(git branch --merged=master | grep -v master); git fetch --prune'
 
