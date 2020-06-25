@@ -53,6 +53,10 @@ alias gotest="go test -short -p 1 -parallel 4 -timeout 300s -race"
 
 alias highlight='ack --passthru "$@"'
 
+tailbat() {
+  tail -f $1 | bat --paging=never -l log
+}
+
 # ruby/rails dev aliases
 alias be="bundle exec"
 
