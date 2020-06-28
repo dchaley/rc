@@ -23,11 +23,11 @@ set cinkeys=0{,0},:,!^F,o,O,e
 set cinoptions=>s,e0,n0,f0,{0,}0,^0,:s,=s,l0,gs,hs,ps,ts,+s,c3,C0,(0,u0,
 		   \U0,w0,m0,j1,)20,*30
 
-" Expand tabs to spaces. Use indentation of 4.
-" Keep actual tabs at 8. 
-set shiftwidth=4
+" Expand tabs to spaces. Use indentation of 2.
+" Keep actual tabs at 4. 
+set shiftwidth=2
 set expandtab
-set tabstop=8
+set tabstop=4
 " Make it so that <BS> at beginning of line is aware of tabs.
 set smarttab
 
