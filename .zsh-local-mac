@@ -15,9 +15,6 @@ bindkey "[1;5D" backward-word
 bindkey "[1;5C" forward-word
 bindkey "[3~" delete-char
 
-#export nvm_dir="$home/.nvm"
-#. "/usr/local/opt/nvm/nvm.sh"
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/davidhaley/external/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/davidhaley/external/google-cloud-sdk/path.zsh.inc'; fi
 
@@ -27,3 +24,6 @@ if [ -f '/Users/davidhaley/external/google-cloud-sdk/completion.zsh.inc' ]; then
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
