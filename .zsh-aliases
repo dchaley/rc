@@ -59,8 +59,10 @@ tailbat() {
 
 # ruby/rails dev aliases
 alias be="bundle exec"
+alias bspec="be rspec"
+alias bsrb="be srb tc"
 
 # git aliases
 alias gcam='git commit --amend'
-alias git-tidy='git branch -d $(git branch --merged=master | grep -v master); git fetch --prune'
+alias git-tidy='git branch -d $(git branch --merged=development | grep -v development); git fetch --prune'
 
