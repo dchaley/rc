@@ -215,3 +215,4 @@ function abbreviate_paths()
 export PATH=~/bin:$PATH
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+which direnv > /dev/null && eval "$(direnv hook zsh)"
