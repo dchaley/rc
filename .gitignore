@@ -1,2 +1,6 @@
 .rspec-local
-dch-scratch
+.*.swp
+package-lock.json
+.gitignore
+.idea
+.DS_Store
