@@ -22,6 +22,8 @@ alias tb="thunderbird"
 
 alias vi="vim"
 
+alias venv='. venv/bin/activate'
+
 alias makectags="ctags --c++-kinds=+cdefgmnpstuv --fields=+iaS --extra=+q *.c(N) *.cpp(N) *.h(N) *.hpp(N)"
 
 alias please="sudo"
