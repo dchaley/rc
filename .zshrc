@@ -58,12 +58,8 @@ else
     PROMPT='[%n@%m:[%T]:$(abbreviate_paths "%~")\$ '
 fi
 
-if [ "$OSTYPE" = "darwin16.0" ] ; then
-    bindkey '\e[1;5D' backward-word
-    bindkey '\e[1;5C' forward-word
-    bindkey '\e[H' beginning-of-line
-    bindkey '\e[F' end-of-line
-    bindkey '\e[3~' delete-char
+if [[ "$OSTYPE" == darwin* ]] ; then
+  source .zshrc-mac
 fi
 
 # right-side prompt
