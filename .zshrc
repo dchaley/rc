@@ -59,7 +59,9 @@ else
 fi
 
 if [[ "$OSTYPE" == darwin* ]] ; then
-  source .zshrc-mac
+  if [ -e ~/.zshrc-mac ] ; then
+    source ~/.zshrc-mac
+  fi
 fi
 
 # right-side prompt
