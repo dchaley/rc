@@ -1,7 +1,7 @@
 # Aliases specifically for Mac-like unixen
 
 # intellij
-alias idea="/Applications/IntelliJ\ IDEA\ CE.app/Contents/MacOS/idea"
+alias idea="/Applications/IntelliJ\ IDEA.app/Contents/MacOS/idea"
 
 # Put some brews first on path
 # There's gotta be a better way to do this ...?
