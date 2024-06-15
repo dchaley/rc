@@ -3,6 +3,10 @@
 # intellij
 alias idea="/Applications/IntelliJ\ IDEA.app/Contents/MacOS/idea"
 
+# OpenJDK said to do this
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+
 # Put some brews first on path
 # There's gotta be a better way to do this ...?
+export PATH=/opt/homebrew/bin:$PATH
 export PATH="/usr/local/opt/bison/bin:$PATH"
