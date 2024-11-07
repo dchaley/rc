@@ -8,5 +8,5 @@ export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
 # Put some brews first on path
 # There's gotta be a better way to do this ...?
-export PATH=/opt/homebrew/bin:$PATH
+export PATH=/opt/homebrew/bin:/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH
 export PATH="/usr/local/opt/bison/bin:$PATH"
