@@ -410,6 +410,10 @@ if (&term == 'xterm' || &term == 'xterm-color' || &term == 'xterm-256color' || &
         "set t_AF=[%?%p1%{8}%<%t%p1%{30}%+%e%p1%{82}%+%;%dm
 
         colorscheme david-colors
+
+        " FIXME: replace with david-colors once it's color adaptive
+        let g:lumen_light_colorscheme = "morning"
+        let g:lumen_dark_colorscheme = "david-colors"
     endif
 
     if ($COLORTERM == "rxvt" || $COLORTERM == "rxvt-xpm")
