@@ -63,8 +63,9 @@ hi StatusLine cterm=bold	   ctermbg=blue ctermfg=yellow guibg=gold guifg=blue
 hi StatusLineNC	cterm=bold	   ctermbg=blue ctermfg=black  guibg=gold guifg=blue
 hi Title      ctermfg=DarkMagenta  gui=bold guifg=Magenta
 hi VertSplit  cterm=reverse	   gui=reverse
-hi Visual     ctermbg=NONE	   cterm=reverse gui=reverse guifg=Grey guibg=fg
-hi VisualNOS  cterm=underline,bold gui=underline,bold
+"hi Visual     ctermbg=NONE	   cterm=reverse gui=reverse guifg=Grey guibg=fg
+"hi Visual term=reverse cterm=reverse ctermbg=Grey gui=reverse "guifg=Grey guibg=fg
+hi Visual ctermfg=Black ctermbg=Grey gui=reverse guifg=Grey guibg=fg
 hi WarningMsg ctermfg=DarkRed	   guifg=Red
 hi WildMenu   ctermfg=Black	   ctermbg=Yellow    guibg=Yellow guifg=Black
 

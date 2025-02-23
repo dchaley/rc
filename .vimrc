@@ -96,7 +96,7 @@ set cursorline
 set diffopt=filler,vertical
 
 "colorscheme myevening
-highlight LineNr ctermfg=darkgray ctermbg=black
+" highlight LineNr ctermfg=darkgray ctermbg=black
 
 
 " showmarks settings
