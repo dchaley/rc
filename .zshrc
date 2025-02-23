@@ -19,6 +19,8 @@ bindkey -e
 
 bindkey "^[[5D" backward-word
 bindkey "^[[5C" forward-word  
+bindkey "\e\e[C" forward-word
+bindkey "\e\e[D" backward-word
 
 bindkey "^U" backward-kill-line
 
