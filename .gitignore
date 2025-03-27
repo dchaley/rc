@@ -1,6 +1,5 @@
 .rspec-local
 .*.swp
 package-lock.json
-.gitignore
 .idea
 .DS_Store
