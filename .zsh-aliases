@@ -67,4 +67,7 @@ alias bsrb="be srb tc"
 # git aliases
 alias gcam='git commit --amend'
 alias git-tidy='git branch -d $(git branch --merged=main | grep -v main); git fetch --prune'
+alias git-delete-stale="git branch -v|grep \"\\[gone\\]\"|awk '{print \$1}'|xargs -I{} echo git branch -D {}"
+
+alias bundle-rubocop="git diff --name-only main | sort | uniq | perl -ne 'chomp(); if (\$_ =~ /.rb$/ && -e \$_) {print \"\$_\n\"}' | xargs bundle exec rubocop"
 
