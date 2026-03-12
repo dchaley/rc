@@ -1,13 +1,11 @@
 #!/bin/zsh
-#
-# .zstyles - Set zstyle settings for plugins that need them.
-#
+
+#####################
+# .zstyles settings #
+#####################
 
 zstyle :omz:plugins:iterm2 shell-integration yes
 
-#
-# Antidote
-#
-
-# zstyle ':antidote:bundle' file ${ZDOTDIR:-~}/.zplugins.txt
-# zstyle ':antidote:bundle' use-friendly-names 'yes'
+# nvm configuration
+zstyle ':omz:plugins:nvm' lazy yes
+zstyle ':omz:plugins:nvm' autoload yes

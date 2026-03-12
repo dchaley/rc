@@ -26,6 +26,11 @@ romkatv/zsh-bench kind:path
 
 ohmyzsh/ohmyzsh path:plugins/iterm2
 
+#################
+# Developer tools
+
+ohmyzsh/ohmyzsh path:plugins/nvm
+
 # Other Fish-like features
 zdharma-continuum/fast-syntax-highlighting  # Syntax highlighting
 zsh-users/zsh-autosuggestions               # Auto-suggestions
