@@ -1,28 +1,8 @@
 
 # dhaley's stuff
 
-alias grep="grep --color"
-alias pgrep="pgrep -l"
-alias afslogin="klog dhaley"
-alias cs="checkstatus"
-alias cvsdiff="cvs diff --brief"
-
-alias cd="pushd"
-alias gcam="git commit --amend"
 
 alias lsd="ls -d */"
-alias ls="ls -F --color"
-
-alias pod="perldoc"
-
-alias duh="du -h --max-depth=1"
-alias duhere="du -h --max-depth=1"
-
-alias tb="thunderbird"
-
-alias vi="vim"
-
-alias venv='. venv/bin/activate'
 
 alias makectags="ctags --c++-kinds=+cdefgmnpstuv --fields=+iaS --extra=+q *.c(N) *.cpp(N) *.h(N) *.hpp(N)"
 
@@ -47,10 +27,6 @@ ccd() {
   export FZF_DEFAULT_COMMAND=$old_fzf_default_command
 }
 
-#alias mac="bindkey -s  "
-
-#alias remake="make clean && make"
-
 alias gotest="go test -short -p 1 -parallel 4 -timeout 300s -race"
 
 alias highlight='ack --passthru "$@"'
@@ -58,16 +34,3 @@ alias highlight='ack --passthru "$@"'
 tailbat() {
   tail -f $1 | bat --paging=never -l log
 }
-
-# ruby/rails dev aliases
-alias be="bundle exec"
-alias bspec="be rspec"
-alias bsrb="be srb tc"
-
-# git aliases
-alias gcam='git commit --amend'
-alias git-tidy='git branch -d $(git branch --merged=main | grep -v main); git fetch --prune'
-alias git-delete-stale="git branch -v|grep \"\\[gone\\]\"|awk '{print \$1}'|xargs -I{} echo git branch -D {}"
-
-alias bundle-rubocop="git diff --name-only main | sort | uniq | perl -ne 'chomp(); if (\$_ =~ /.rb$/ && -e \$_) {print \"\$_\n\"}' | xargs bundle exec rubocop"
-

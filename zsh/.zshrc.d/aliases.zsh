@@ -3,13 +3,29 @@
 # .aliases - Set whatever shell aliases you want.
 #
 
-# single character aliases - be sparing!
-alias _=sudo
-alias l=ls
-alias g=git
-
 # mask built-ins with better defaults
+alias cd="pushd"
+alias ls="ls -F --color"
 alias vi=vim
+alias grep="grep --color"
+alias pgrep="pgrep -l"
+
+# Development helpers
+alias gcam="git commit --amend"
+alias git-tidy='git branch -d $(git branch --merged=main | grep -v main); git fetch --prune'
+alias git-delete-stale="git branch -v|grep \"\\[gone\\]\"|awk '{print \$1}'|xargs -I{} echo git branch -D {}"
+alias pod="perldoc"
+alias venv='. venv/bin/activate'
+
+# Ruby helpers
+alias be="bundle exec"
+alias bspec="be rspec"
+alias bsrb="be srb tc"
+alias bundle-rubocop="git diff --name-only main | sort | uniq | perl -ne 'chomp(); if (\$_ =~ /.rb$/ && -e \$_) {print \"\$_\n\"}' | xargs bundle exec rubocop"
+
+# Sort me
+alias duh="du -h --max-depth=1"
+alias duhere="du -h --max-depth=1"
 
 # more ways to ls
 alias ll='ls -lh'
