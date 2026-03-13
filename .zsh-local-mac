@@ -68,6 +68,10 @@ fi
 
 export GROOVY_HOME=/opt/homebrew/opt/groovy/libexec
 
+export CBLOSC_LIB=$(echo $(brew --cellar c-blosc)/*/lib)
+export DYLD_LIBRARY_PATH="$CBLOSC_LIB"
+export JAVA_OPTS="-Djna.library.path=$CBLOSC_LIB"
+
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
