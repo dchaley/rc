@@ -21,6 +21,7 @@ romkatv/powerlevel10k
 
 # Utilities
 zshzoo/macos conditional:is-macos
+alberti42/zsh-appearance-control
 belak/zsh-utils path:utility
 romkatv/zsh-bench kind:path
 
@@ -32,6 +33,6 @@ ohmyzsh/ohmyzsh path:plugins/iterm2
 ohmyzsh/ohmyzsh path:plugins/nvm
 
 # Other Fish-like features
-zdharma-continuum/fast-syntax-highlighting  # Syntax highlighting
 zsh-users/zsh-autosuggestions               # Auto-suggestions
 zsh-users/zsh-history-substring-search      # Up/Down to search history
+zdharma-continuum/fast-syntax-highlighting  # Syntax highlighting

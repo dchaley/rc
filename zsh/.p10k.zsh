@@ -162,7 +162,14 @@
   fi
 
   # Default background color.
-  typeset -g POWERLEVEL9K_BACKGROUND=234
+  zac sync
+  local is_dark
+  is_dark=`zac status`
+  if (( is_dark )); then
+    typeset -g POWERLEVEL9K_BACKGROUND=234
+  else
+    typeset -g POWERLEVEL9K_BACKGROUND=255
+  fi
 
   # Separator between same-color segments on the left.
   typeset -g POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR='%242F\uE0B1'

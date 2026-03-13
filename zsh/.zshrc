@@ -7,8 +7,10 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+is-macos() { [[ "$OSTYPE" == darwin* ]] }
 
 # Lazy-load (autoload) Zsh function files from a directory.
 ZFUNCDIR=${ZDOTDIR:-$HOME}/.zfunctions
@@ -22,6 +24,15 @@ autoload -Uz $ZFUNCDIR/*(.:t)
 if [[ ! -d ${ZDOTDIR:-$HOME}/.antidote ]]; then
   git clone https://github.com/mattmc3/antidote ${ZDOTDIR:-$HOME}/.antidote
 fi
+
+# Source anything in .zshrc.pre.d (BEFORE antidote loads)
+for _rc in ${ZDOTDIR:-$HOME}/.zshrc.pre.d/*.zsh; do
+  # Ignore tilde files.
+  if [[ $_rc:t != '~'* ]]; then
+    source "$_rc"
+  fi
+done
+unset _rc
 
 # Create an amazing Zsh config using antidote plugins.
 source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
