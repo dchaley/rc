@@ -16,6 +16,7 @@ alias git-tidy='git branch -d $(git branch --merged=main | grep -v main); git fe
 alias git-delete-stale="git branch -v|grep \"\\[gone\\]\"|awk '{print \$1}'|xargs -I{} echo git branch -D {}"
 alias pod="perldoc"
 alias venv='. venv/bin/activate'
+alias dotvenv='. .venv/bin/activate'
 
 # Ruby helpers
 alias be="bundle exec"

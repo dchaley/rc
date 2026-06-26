@@ -47,6 +47,8 @@ for _rc in ${ZDOTDIR:-$HOME}/.zshrc.d/*.zsh; do
 done
 unset _rc
 
+setopt pushd_silent pushd_tohome
+
 # To customize prompt, run `p10k configure` or edit .p10k.zsh.
 [[ ! -f ${ZDOTDIR:-$HOME}/.p10k.zsh ]] || source ${ZDOTDIR:-$HOME}/.p10k.zsh
 
