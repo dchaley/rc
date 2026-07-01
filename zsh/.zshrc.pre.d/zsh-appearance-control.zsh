@@ -1,10 +1,7 @@
 # zsh-appearance-control
 
-my_zac_callback() {
-  zac sync
-  local is_dark
-  is_dark=`zac status`
-
+my_imm_callback() {
+  local is_dark=$1
   if (( is_dark )); then
     typeset -g POWERLEVEL9K_BACKGROUND=234
   else
@@ -14,4 +11,4 @@ my_zac_callback() {
 }
 
 # Export this variable before loading zsh-appearance-control
-export ZAC_CALLBACK_FNC=my_zac_callback
+export ZAC_IMMEDIATE_CALLBACK_FNC=my_imm_callback
