@@ -1,5 +1,16 @@
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim-Plug
 
+call plug#begin()
+" OS/Utility
+Plug 'vimpostor/vim-lumen'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'vim-airline/vim-airline'
+" Syntax highlighting
+Plug 'pangloss/vim-javascript'
+call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General options
@@ -437,9 +448,6 @@ endif
 
 set exrc
 set secure
-
-" Initialize pathogen package management system
-execute pathogen#infect()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

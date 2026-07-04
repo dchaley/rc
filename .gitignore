@@ -1,3 +1,6 @@
+.vim/plugged
+
+# Temp files
 .*.swp
 .idea
 .DS_Store
