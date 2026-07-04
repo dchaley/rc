@@ -143,12 +143,6 @@ let g:Tex_CompileRule_pdf = 'mydvipdf -title $*.dvi'
 let g:Tex_ViewRuleComplete_dvi = 'advi "$*.dvi" 2>/dev/null &'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" pylint settings:
-
-" don't pylint on every write...
-let g:pylint_onwrite = 0
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " gnome-terminal is stupid about alt. so use control+char for
 " various mappings instead of alt+char
 imap <C-l> <A-l>
