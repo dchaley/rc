@@ -22,3 +22,12 @@ path=(
   /usr/local/{,s}bin(N)
   $path
 )
+
+# Source anything in .zshenv.d.
+for _rc in ${ZDOTDIR:-$HOME}/.zshenv.d/*.zsh(N); do
+  # Ignore tilde files.
+  if [[ $_rc:t != '~'* ]]; then
+    source "$_rc"
+  fi
+done
+unset _rc
