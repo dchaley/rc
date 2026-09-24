@@ -12,6 +12,7 @@ alias pgrep="pgrep -l"
 
 # Development helpers
 alias gcam="git commit --amend"
+alias gcamq="git commit --amend --no-edit"
 alias git-tidy='git branch -d $(git branch --merged=main | grep -v main); git fetch --prune'
 alias git-delete-stale="git branch -v|grep \"\\[gone\\]\"|awk '{print \$1}'|xargs -I{} echo git branch -D {}"
 alias pod="perldoc"
