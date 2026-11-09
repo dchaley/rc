@@ -14,7 +14,18 @@ alias pgrep="pgrep -l"
 alias gcam="git commit --amend"
 alias gcamq="git commit --amend --no-edit"
 alias git-tidy='git branch -d $(git branch --merged=main | grep -v main); git fetch --prune'
-alias git-delete-stale="git branch -v|grep \"\\[gone\\]\"|awk '{print \$1}'|xargs -I{} echo git branch -D {}"
+git-delete-stale() {
+  git fetch --prune
+  git for-each-ref refs/heads --format='%(refname:short)%09%(upstream:track)%09%(worktreepath)' | while IFS=$'\t' read -r branch track worktree; do
+    case "$track" in *gone*) ;; *) continue ;; esac
+    case "$branch" in master|main) continue ;; esac
+    if [ -n "$worktree" ]; then
+      echo git worktree remove "$worktree" || { echo "skip $branch ($worktree)"; continue; }
+    fi
+    echo git branch -D "$branch"
+  done
+}
+
 alias pod="perldoc"
 alias venv='. venv/bin/activate'
 alias dotvenv='. .venv/bin/activate'
